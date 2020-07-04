@@ -40,3 +40,7 @@ Pythonらしく無い人にもすんなり扱えるツールのご紹介がで�
 - 開発例紹介
 - まとめ (1min)
 - 質疑応答 (2min)
+
+## Slide Link
+
+- https://gitpitch.com/ainamori/pyconjp#/
