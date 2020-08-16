@@ -1,0 +1,30 @@
+openapi: "3.0.0"
+
+info:
+  title: PyConJP 2020 Connexion Demo
+  description: PyConJP 2020 Connexion Demo
+  contact:
+    name: Akira Inamori
+    email: akira.inamori@tf-ebina.com
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8000
+    description: connexion url
+
+paths:
+  /:
+    get:
+      summary: API Top page
+      description: Return OK message when it API is working.
+      operationId: app.PyConJP.url_top
+      tags:
+        - api
+      responses:
+        '200':
+          description: Regular response.
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: OK
