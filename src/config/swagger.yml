@@ -18,8 +18,6 @@ paths:
       summary: API Top page
       description: Return OK message when it API is working.
       operationId: app.PyConJP.url_top
-      tags:
-        - api
       responses:
         '200':
           description: Regular response.
@@ -28,3 +26,56 @@ paths:
               schema:
                 type: string
               example: OK
+  /demo/{demo_path}:
+    get:
+      summary: Demo programs get
+      description: Call demo.py and methods
+      operationId: demo.DemoClass.demo_get
+      parameters:
+        - $ref: '#/components/parameters/demo_path'
+      responses:
+        '200':
+          description: Regular response.
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: OK
+    post:
+      summary: Demo programs post
+      description: Call demo.py and methods
+      operationId: demo.DemoClass.demo_post
+      parameters:
+        - $ref: '#/components/parameters/demo_path'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/post_params"
+      responses:
+        '200':
+          description: Regular response.
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: OK
+
+components:
+  parameters:
+    demo_path:
+      name: demo_path
+      description: PyConJP demo path parameter
+      in: path
+      required: true
+      schema:
+        type: string
+        example: sample_path
+  schemas:
+    post_params:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string

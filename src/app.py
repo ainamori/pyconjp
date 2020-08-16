@@ -2,12 +2,12 @@
 #  -*- coding: utf-8 -*-
 import os
 import sys
+from logging import DEBUG, StreamHandler, basicConfig, getLogger
+
 import click
 import connexion
-from logging import getLogger, StreamHandler
-from logging import basicConfig
-from logging import DEBUG
 from flask_cors import CORS
+
 logger = getLogger(__name__)
 handler = StreamHandler()
 logger.addHandler(handler)
