@@ -60,6 +60,22 @@ paths:
               schema:
                 type: string
               example: OK
+  /ngdemo/{demo_path}:
+    get:
+      summary: None classmethod Demo programs get
+      description: Call demo.py and methods none classmethod
+      operationId: demo.DemoClass.none_class_get
+      parameters:
+        - $ref: '#/components/parameters/demo_path'
+      responses:
+        '200':
+          description: Regular response.
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: OK
+
 
 components:
   parameters:
