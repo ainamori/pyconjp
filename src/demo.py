@@ -24,3 +24,21 @@ class DemoClass:
         json_body = json.dumps(messages)
         status_code = 200
         return json_body, status_code
+
+    @classmethod
+    def demo_get2(cls, demo_path):
+        messages = {
+            "your_path": demo_path,
+        }
+        json_body = json.dumps(messages)
+        status_code = 200
+        return json_body, status_code
+
+    @classmethod
+    def demo_post2(cls):
+        messages = {
+            "your_path": "demo_path",
+        }
+        json_body = json.dumps(messages)
+        status_code = 200
+        return json_body, status_code

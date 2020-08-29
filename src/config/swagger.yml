@@ -60,6 +60,42 @@ paths:
               schema:
                 type: string
               example: OK
+  /demo2/{demo_path}:
+    get:
+      summary: Demo programs get
+      description: Call demo.py and methods
+      operationId: demo.DemoClass.demo_get2
+      parameters:
+        - $ref: '#/components/parameters/demo_path'
+      responses:
+        '200':
+          description: Regular response.
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: OK
+    post:
+      summary: Demo programs post
+      description: Call demo.py and methods
+      operationId: demo.DemoClass.demo_post2
+      parameters:
+        - $ref: '#/components/parameters/demo_path'
+        - $ref: '#/components/parameters/demo_path2'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/post_params"
+      responses:
+        '200':
+          description: Regular response.
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: OK
+
 
 components:
   parameters:
@@ -67,6 +103,14 @@ components:
       name: demo_path
       description: PyConJP demo path parameter
       in: path
+      required: true
+      schema:
+        type: string
+        example: sample_path
+    demo_path2:
+      name: demo_path2
+      description: PyConJP demo path parameter
+      in: query
       required: true
       schema:
         type: string
